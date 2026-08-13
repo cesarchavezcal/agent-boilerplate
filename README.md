@@ -1,20 +1,34 @@
 # Agent Boilerplate Template
 
-A lightweight, stack-agnostic GitHub Repository Template pre-configured for AI agent-driven software development with Google Antigravity.
+A lightweight, stack-agnostic GitHub Repository Template pre-configured for AI agent-driven software development across any AI environment (Google Antigravity, Cursor, Claude Code, Windsurf, Aider, GitHub Copilot).
 
 ---
 
 ## Features
 
+- **Universal AI Agent Compatibility**: Pre-configured with [`AGENTS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/AGENTS.md), [`.cursorrules`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.cursorrules), and [`CLAUDE.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CLAUDE.md) so ANY AI agent automatically detects uninitialized context and executes onboarding setup.
+- **One-Prompt Project Creation**: Prompt any AI agent with *"Create a project using cesarchavezcal/agent-boilerplate and complete the setup"* to initialize a complete repository end-to-end.
 - **Automatic Session-Start Onboarding (`/init-project`)**: Auto-detects uninitialized projects and runs an automated setup interview, populating project quad files, base skills (`mattpocock/skills`), and stack skills.
 - **Official 7-Step Pipeline Sequence**: Built-in governance for turning ideas into production code (`/product-function` -> `/grill-with-docs` -> `/to-spec` -> `/information-architecture` -> `/ooux` -> `/to-tickets` -> `/implement`).
 - **Strict Git & PR Conventions**: Enforced branch naming (`{prefix}/CCH/{project-initials}-{ticket-number}-{ticket-summary}`), Conventional Commits (`<prefix>(<scope>): <summary>`), PR label auto-attaching, and high-level PR descriptions.
 - **`/i-have-adhd` Mode Default**: Action-first, numbered, direct communication style that eliminates fluff and keeps work momentum high.
-- **Agent Document Quad**: Pre-structured [`AGENTS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/AGENTS.md), [`SKILLS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/SKILLS.md), [`CONTEXT.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CONTEXT.md), and [`MEMORY.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/MEMORY.md).
 
 ---
 
-## How to Use This Template
+## One-Prompt Creation with Any AI Agent
+
+Simply tell your AI agent:
+
+> *"Create a new project named `my-awesome-app` using `cesarchavezcal/agent-boilerplate` and complete the setup."*
+
+The AI agent will automatically:
+1. Run `gh repo create my-awesome-app --template cesarchavezcal/agent-boilerplate --public --clone`
+2. `cd my-awesome-app`
+3. Execute `/init-project` (auto-detect stack, interview domain vision, populate [`CONTEXT.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CONTEXT.md)/[`AGENTS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/AGENTS.md)/[`SKILLS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/SKILLS.md), install skills, and open setup PR)
+
+---
+
+## How to Use This Template Manually
 
 ### 1. Create a New Repository
 Click **"Use this template"** on GitHub, or run via GitHub CLI:
