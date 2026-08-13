@@ -106,4 +106,5 @@ When writing or creating a Pull Request:
 - **Describe WHAT, not HOW**: Explain what the PR delivers to reviewers, not line-by-line implementation details.
 - **Keep it High-Level & Scannable**: 2–4 sentences is standard. Use bullet points only for distinct deliverables.
 - **Surprise / Risk Callouts Only**: Only surface specific code details or file paths if complex logic, edge cases, security considerations, or architectural changes require careful review.
-- **PR Labels**: Check `.github/workflows/` or `.github/*.yml` for required preview app PR labels and apply them.
+- **PR Labels**: Check `.github/workflows/` or `.github/*.yml` for required preview app PR labels. Always attach matching PR labels automatically when opening PRs (e.g. `gh pr create --label "chore"` or `--label "feature"`).
+
