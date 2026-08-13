@@ -1,20 +1,20 @@
 # Agent Skills Catalog (`SKILLS.md`)
 
-This repository integrates custom agent skills, personal skills, Matt Pocock's skills, and `npx skills` auto-discovery.
+This repository integrates core base skills (`mattpocock/skills`), personal skills (`cesarchavezcal/personal-skills`), and dynamic `npx skills` auto-discovery.
 
 ---
 
-## 1. Core Pipeline Skills
+## 1. Core Pipeline & Onboarding Skills
 
 | Skill | Trigger / Command | Purpose | Source |
 |---|---|---|---|
+| **`init-project`** | `/init-project` | Auto-detect stack, interview domain, populate quad & discover skills | `agent-boilerplate` |
 | **`product-function`** | `/product-function` | Scope feature as $y = f(x)$ with 10x Scope-Stripping | `personal-skills` |
-| **`grill-with-docs`** | `/grill-with-docs`, `/grill` | Stress-test feature scope against docs & edge cases | `personal-skills` |
+| **`grill-with-docs`** | `/grill-with-docs`, `/grill` | Stress-test feature scope & stack choices against docs | `personal-skills` |
 | **`information-architecture-review`** | `/information-architecture` | Generate Sitemap, User Sequence Diagrams & Taxonomy | `personal-skills` |
 | **`ooux`** | `/ooux` | Extract Objects, Content vs Metadata, ERD & Forced Ranking | `personal-skills` |
 | **`i-have-adhd`** | `/i-have-adhd` | Action-first, numbered, ADHD-optimised output style | `ayghri/i-have-adhd` |
-| **`ui-ux-pro-max`** | `/ui-ux-pro-max` | UI design system, color tokens, typography & motion | `nextlevelbuilder` |
-| **`ux-copy`** | `/ux-copy` | UX writing, microcopy, encouraging tone & CTAs | `anthropics` |
+| **`mattpocock/skills`** | `npx skills@latest add mattpocock/skills` | Full TypeScript, React, and software engine skill suite | `mattpocock/skills` |
 
 ---
 
@@ -26,26 +26,25 @@ This repository integrates custom agent skills, personal skills, Matt Pocock's s
 | **`team-cheap`** | `/team-cheap` | Subagent fan-out orchestrator above `/harness` | `personal-skills` |
 | **`code-review`** | `/code-review` | Parallel Standards & Spec code review pass | `personal-skills` |
 | **`diagnosing-bugs`** | `/diagnosing-bugs` | Structured bug diagnosis & log extraction loop | `personal-skills` |
-| **`find-skills`** | `/find-skills` | Discover & install stack-specific skills via `npx skills` | Open Ecosystem |
+| **`find-skills`** | `/find-skills` | Discover stack & design skills via `npx skills find` | Open Ecosystem |
 
 ---
 
-## 3. Dynamic Stack Skill Discovery
+## 3. Dynamic Stack Skill Discovery & Context Reloading
 
-When initializing a new project with a specific technology stack (e.g., React, Next.js, Vue, Python, Supabase, Tailwind), run:
-
-```bash
-npx skills find [stack-keyword]
-```
-
-To install stack skills into your local agent environment:
+When initializing or updating a project stack (e.g., React, Next.js, Vue, Python, Supabase, Tailwind, UI design), execute:
 
 ```bash
-npx skills add <owner/repo@skill-name> -g -y
+bash scripts/setup-project.sh [stack-keyword]
 ```
 
-### Recommended Stack Additions
+Or run `npx skills find [stack-keyword]`.
 
-- **React & Next.js**: `npx skills add vercel-labs/agent-skills@react-best-practices -g -y`
-- **Web Guidelines**: `npx skills add vercel-labs/agent-skills@web-design-guidelines -g -y`
-- **Database / Backend**: `npx skills add supabase/agent-skills@supabase -g -y`
+### Interactive Confirmation & Installation
+1. Agent presents a ranked list of matching skills in chat.
+2. User confirms which skills to install.
+3. Install selected skills globally:
+   ```bash
+   npx skills add <owner/repo@skill-name> -g -y
+   ```
+4. **Skill Context Reload**: Agents automatically reload active skill definitions immediately after installation.
