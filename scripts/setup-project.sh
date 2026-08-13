@@ -8,10 +8,11 @@ echo "🚀 Starting agent-boilerplate project initialization script..."
 # 1. Base skills setup
 echo "📦 Step 1: Installing base skills package (mattpocock/skills)..."
 if command -v npx >/dev/null 2>&1; then
-    npx skills@latest add mattpocock/skills -g -y || echo "⚠️ Warning: Could not auto-install mattpocock/skills automatically. Please run manually."
+    npx skills@latest add mattpocock/skills -y || echo "⚠️ Warning: Could not auto-install mattpocock/skills automatically. Please run manually."
 else
     echo "⚠️ npx is not available. Please install node/npm to manage agent skills."
 fi
+
 
 # 2. Stack file auto-detection
 echo ""

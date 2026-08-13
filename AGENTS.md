@@ -28,7 +28,7 @@ This repository operates under **ADHD communication guidelines by default**:
 
 ### Setup Phase (`/init-project`)
 When initializing a fresh project repository:
-1. **Base Skills Installation**: Run `npx skills@latest add mattpocock/skills -g -y` and verify `cesarchavezcal/personal-skills`. Reload skill context immediately.
+1. **Base Skills Installation**: Run `npx skills@latest add mattpocock/skills -y` and verify `cesarchavezcal/personal-skills`. Reload skill context immediately.
 2. **Auto-Stack Detection & Multi-Stage Interview**: Auto-detect existing project stack files (`package.json`, `pyproject.toml`, etc.), then execute pipeline steps 1–4 (`/product-function` -> `/grill-with-docs` -> `/to-spec` -> `/information-architecture`) to gather domain parameters and sitemap.
 3. **Quad Auto-Population**: Populate [`CONTEXT.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CONTEXT.md), [`AGENTS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/AGENTS.md), [`MEMORY.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/MEMORY.md), [`README.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/README.md), and [`SKILLS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/SKILLS.md) directly in place.
 4. **Interactive Skill Discovery (`/find-skills`)**: Run `npx skills find` with stack and design inputs, present a ranked list in chat for user confirmation, install confirmed skills, and reload context.
