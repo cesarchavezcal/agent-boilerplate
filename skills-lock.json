@@ -97,6 +97,12 @@
       "skillPath": "skills/information-architecture-review/SKILL.md",
       "computedHash": "98d62164bfb9c245fb2910ac490f30b6f912d645c32d064dbc172b5e542aa33b"
     },
+    "init-project": {
+      "source": "cesarchavezcal/agent-boilerplate",
+      "sourceType": "local",
+      "skillPath": ".agents/skills/init-project/SKILL.md",
+      "computedHash": "e538bcde5575aba0fd94ef14a9e76d62b47d4dd76c48a97cc6674edd9fe9ef17"
+    },
     "loop-me": {
       "source": "mattpocock/skills",
       "sourceType": "github",
