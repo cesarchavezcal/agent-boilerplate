@@ -1,8 +1,8 @@
 # Agent Skills Catalog (`SKILLS.md`)
 
-This repository integrates core base skills (`mattpocock/skills`), personal skills (`cesarchavezcal/personal-skills`), and dynamic `npx skills` auto-discovery.
+This repository integrates 42 workspace-installed skills (`mattpocock/skills`, `cesarchavezcal/personal-skills`, and built-in template tools) alongside global SDD/Gentle-AI orchestration capabilities and dynamic `npx skills` auto-discovery.
 
-For the full indexed registry of all 41 installed skills and categories, see [`.atl/skill-registry.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.atl/skill-registry.md).
+For the full indexed registry of all 42 workspace skills and 25 global system skills across 6 categories, see [`.atl/skill-registry.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.atl/skill-registry.md).
 
 ---
 
