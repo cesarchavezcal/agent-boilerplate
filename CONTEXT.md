@@ -25,12 +25,19 @@ This file holds the project's domain definition, architecture overview, and tech
 
 ```text
 .
-├── AGENTS.md               # Primary operational rules & 7-step pipeline sequence
-├── SKILLS.md               # Skill catalog & npx skills stack discovery
+├── .atl/                   # Skill registry index (.atl/skill-registry.md)
+├── .gga                    # Gentleman Guardian Angel AI code review configuration
+├── .github/                # GitHub workflows, issue templates, and PR template
+├── AGENTS.md               # Primary operational rules, SDD pipeline, & coding standards
+├── CLAUDE.md               # Claude Code configuration pointer
 ├── CONTEXT.md              # Project domain definition & tech stack
 ├── MEMORY.md               # Durable memory & architectural decision records
+├── SKILLS.md               # High-level skill catalog and dynamic discovery guide
+├── openspec/               # Spec-Driven Development (specs/, changes/, config.yaml)
+├── scripts/                # Dynamic stack setup and skill installation scripts
 └── docs/
-    └── product-design/     # Output directory for /product-function, /ia, and /ooux specs
+    ├── planning/           # Implementation plans and walkthroughs
+    └── product-design/     # Product specs (/product-function, /ia, /ooux)
 ```
 
 ---

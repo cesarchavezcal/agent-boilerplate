@@ -1,0 +1,62 @@
+# OpenSpec Configuration
+schema: 1
+
+project:
+  name: agent-boilerplate
+  repository: cesarchavezcal/agent-boilerplate
+  type: template-boilerplate
+  description: Lightweight, stack-agnostic GitHub repository template pre-configured for AI agent-driven software development.
+  stack:
+    language: polyglot / shell / markdown
+    frameworks: []
+    package_manager: null
+    build_tool: null
+
+testing:
+  runner: null
+  framework: null
+  layers: []
+  coverage_tool: null
+  strict_tdd: false
+  reason_strict_tdd_disabled: "Base boilerplate template does not include a test runner. Enable strict_tdd: true when configuring a concrete project stack with Vitest, Jest, pytest, or Go test."
+  command: null
+
+quality:
+  linter: gga
+  linter_config: .gga
+  formatter: null
+  type_checker: null
+
+conventions:
+  git:
+    branch_pattern: "{prefix}/CCH/{project-initials}-{ticket-number}-{ticket-summary}"
+    commit_pattern: "<prefix>(<scope>): <summary>"
+    pr_template: ".github/PULL_REQUEST_TEMPLATE.md"
+  pipeline:
+    explore:
+      command: "/product-function"
+      secondary: "/grill-with-docs"
+    spec:
+      command: "/to-spec"
+    design:
+      command: "/information-architecture"
+      secondary: "/ooux"
+    tasks:
+      command: "/to-tickets"
+    apply:
+      executor: "/implement"
+      worker: "/harness"
+      swarm: "/team-cheap"
+    verify:
+      review: "/code-review"
+      gate: ".gga"
+    archive:
+      command: "/sdd-archive"
+
+skills:
+  registry_path: ".atl/skill-registry.md"
+  lockfile_path: "skills-lock.json"
+  count: 41
+
+persistence:
+  mode: openspec
