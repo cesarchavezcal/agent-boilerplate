@@ -2,6 +2,8 @@
 
 This repository integrates core base skills (`mattpocock/skills`), personal skills (`cesarchavezcal/personal-skills`), and dynamic `npx skills` auto-discovery.
 
+For the full indexed registry of all 41 installed skills and categories, see [`.atl/skill-registry.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.atl/skill-registry.md).
+
 ---
 
 ## 1. Core Pipeline & Onboarding Skills

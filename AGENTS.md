@@ -24,37 +24,36 @@ This repository operates under **ADHD communication guidelines by default**:
 
 ---
 
-## 2. Official 7-Step Pipeline Sequence & `/init-project`
+## 2. Unified SDD & 7-Step Architecture Pipeline
 
-### Setup Phase (`/init-project`)
-When initializing a fresh project repository:
-1. **Base Skills Installation**: Run `npx skills@latest add mattpocock/skills -y` and verify `cesarchavezcal/personal-skills`. Reload skill context immediately.
-2. **Auto-Stack Detection & Multi-Stage Interview**: Auto-detect existing project stack files (`package.json`, `pyproject.toml`, etc.), then execute pipeline steps 1–4 (`/product-function` -> `/grill-with-docs` -> `/to-spec` -> `/information-architecture`) to gather domain parameters and sitemap.
-3. **Quad Auto-Population**: Populate [`CONTEXT.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CONTEXT.md), [`AGENTS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/AGENTS.md), [`MEMORY.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/MEMORY.md), [`README.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/README.md), and [`SKILLS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/SKILLS.md) directly in place.
-4. **Interactive Skill Discovery (`/find-skills`)**: Run `npx skills find` with stack and design inputs, present a ranked list in chat for user confirmation, install confirmed skills, and reload context.
-5. **Baseline Git Setup**: Verify git user configuration (`cesarchavezcal`) and execute the Git Workflow (create branch `chore/CCH/initial-setup-{summary}`, commit, push PR).
+This repository unifies the specialized 7-step design skills with the official **Spec-Driven Development (SDD)** lifecycle. Canonical SDD phase commands and specialized pipeline skills are fully interoperable.
 
-### Feature Development Pipeline (7-Step Sequence)
-Whenever requested to design, specify, or build a new feature or application surface, follow this exact sequence:
+### Unified Pipeline Mapping Matrix
 
 ```text
-1. /product-function          ──> Scope feature as a function y = f(x)
-                                  (Input x, Output y, Minimal Function f(), 10x Scope-Stripping)
-
-2. /grill-with-docs           ──> Stress-test scope, edge cases, and design bounds against docs
-
-3. /to-spec                   ──> Initiate specification generation phase
-
-4. /information-architecture  ──> Generate IA doc in docs/product-design/
-                                  (Sitemap, User Sequence Flows, Taxonomy)
-
-5. /ooux                      ──> Generate OOUX doc in docs/product-design/
-                                  (Entities, Core vs Metadata Cards, ERD, Ranking)
-
-6. /to-tickets                ──> Decompose specification into implementation ticket backlog
-
-7. /implement                 ──> Execute tickets test-first via autonomous agents (/team-cheap / /harness)
+┌───────────────────────────────┬───────────────────────────────┬───────────────────────────────────────────┐
+│ SDD Canonical Phase           │ Specialized Skill Triggers    │ Artifact Target Paths                     │
+├───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
+│ 1. /sdd-explore, /sdd-propose │ /product-function, /grill     │ docs/product-design/product_function.md   │
+│                               │                               │ openspec/changes/<change>/proposal.md     │
+│ 2. /sdd-spec                  │ /to-spec                      │ openspec/specs/<feature>/spec.md          │
+│ 3. /sdd-design                │ /ia, /ooux, /codebase-design  │ docs/product-design/ia.md, ooux.md        │
+│                               │                               │ openspec/changes/<change>/design.md       │
+│ 4. /sdd-tasks                 │ /to-tickets                   │ openspec/changes/<change>/tasks.md        │
+│ 5. /sdd-apply                 │ /implement, /harness, /team   │ Working source code + unit/integration    │
+│ 6. /sdd-verify                │ /code-review, .gga review     │ Review receipts + pre-commit audit        │
+│ 7. /sdd-archive               │ PR merge + /sdd-archive       │ openspec/changes/archive/<date>-<change>/ │
+└───────────────────────────────┴───────────────────────────────┴───────────────────────────────────────────┘
 ```
+
+### Execution Routing Policy for `/sdd-apply` / `/implement`
+When executing implementation tasks:
+1. **Default Route (Sequential / Single Ticket)**: `/sdd-apply` triggers `/implement`, which delegates to an isolated **`/harness`** subagent for strict Red ➔ Green ➔ Refactor TDD.
+2. **Parallel Swarm Route (Multi-Module / `--team`)**: For large or decoupled modules across boundaries, `/sdd-apply --team` dispatches **`/team-cheap`**, fanning out parallel `/harness` subagents.
+
+### Quality & Verification Gate for `/sdd-verify` / `/code-review`
+1. **Two-Axis Audit (`/code-review`)**: Runs parallel subagents verifying (1) Spec Compliance and (2) Standards Compliance.
+2. **AI Pre-Commit Guardrail ([`.gga`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.gga))**: Blocks non-compliant commits against Section 6 coding rules using the configured provider in `.gga`.
 
 ---
 
@@ -69,9 +68,10 @@ Whenever the user invokes `/plan`:
 
 ## 4. Documentation & Storage Conventions
 
-- All product design & specification documents MUST be saved in `docs/product-design/`.
-- All implementation plans & walkthroughs MUST be saved in `docs/planning/`.
-- Prepend completed plan filenames with `✅_` (e.g. `docs/planning/✅_my_plan.md`).
+- **Product Design & Schemas**: Saved in `docs/product-design/` (`product_function.md`, `ia.md`, `ooux.md`).
+- **OpenSpec Specifications**: Living baseline specs in `openspec/specs/`, active changes in `openspec/changes/`, and archived records in `openspec/changes/archive/`.
+- **Implementation Plans & Walkthroughs**: Saved in `docs/planning/`. Prepend completed plan filenames with `✅_` (e.g. `docs/planning/✅_my_plan.md`).
+
 
 ---
 
@@ -107,4 +107,34 @@ When writing or creating a Pull Request:
 - **Keep it High-Level & Scannable**: 2–4 sentences is standard. Use bullet points only for distinct deliverables.
 - **Surprise / Risk Callouts Only**: Only surface specific code details or file paths if complex logic, edge cases, security considerations, or architectural changes require careful review.
 - **PR Labels**: Check `.github/workflows/` or `.github/*.yml` for required preview app PR labels. Always attach matching PR labels automatically when opening PRs (e.g. `gh pr create --label "chore"` or `--label "feature"`).
+
+---
+
+## 6. Core Coding Standards & Architectural Guidelines (GGA Review Rules)
+
+These standards are strictly enforced by automated GGA code reviews and agent pairing workflows:
+
+### Architectural Principles
+1. **Clean / Modular Architecture**: Separate business logic (domain), orchestrators (application/use cases), and adapters (UI, DB, external APIs).
+2. **Deep Modules & Clear Interfaces**: Keep module interfaces simple and signatures expressive while hiding complex implementation details inside.
+3. **Container-Presentational Separation**: In UI layers, isolate side effects, state fetching, and data subscriptions from pure visual rendering components.
+
+### Type Safety & Language Strictness
+1. **Strict Types**: No untyped `any` or loose type overrides. Use exact interfaces and discriminated unions for polymorphic data structures.
+2. **Safe Assertions**: Avoid blind `as` casting. Use runtime validators, type guards, or `@total-typescript/shoehorn` in test environments.
+3. **Explicit Return Types & Exports**: All public-facing functions and exported modules must have clear type signatures.
+
+### Error Handling & Resilience
+1. **Explicit Error Paths**: Favor structured Result/Either types or domain-specific typed errors over silent failures or raw generic `throw Error()`.
+2. **No Swallowed Exceptions**: Every `catch` block must either handle, enrich, or rethrow the error with meaningful contextual diagnostics.
+
+### Testing & Verification (TDD First)
+1. **Test-First Discipline**: Write failing unit or integration tests before implementing feature logic (Red -> Green -> Refactor).
+2. **Deterministic Tests**: Mock network and non-deterministic state at clear boundaries; avoid flaky sleep timers or arbitrary timeouts.
+
+### Code Hygiene & Style
+1. **Self-Documenting Code**: Choose descriptive domain terminology over cryptic abbreviations.
+2. **Dead Code Elimination**: Remove unused imports, dead branches, and obsolete comments before committing.
+3. **Conventional Commits**: Ensure all changes conform to conventional commit format.
+
 
