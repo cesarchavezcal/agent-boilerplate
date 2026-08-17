@@ -68,9 +68,14 @@ Whenever the user invokes `/plan`:
 
 ## 4. Documentation & Storage Conventions
 
+### Rule of Thumb for Document Creation
+- **`docs/`**: If it explains *why* or outlines a high-level design, product architecture, user flows, or implementation plan (e.g. `docs/product-design/`, `docs/planning/`).
+- **`openspec/`**: If it defines a testable contract, formal specification, change lifecycle, tasks, or executable verification criteria (e.g. `openspec/specs/`, `openspec/changes/`).
+
+### Directory Structure & Lifecycle
 - **Product Design & Schemas**: Saved in `docs/product-design/` (`product_function.md`, `ia.md`, `ooux.md`).
 - **OpenSpec Specifications**: Living baseline specs in `openspec/specs/`, active changes in `openspec/changes/`, and archived records in `openspec/changes/archive/`.
-- **Implementation Plans & Walkthroughs**: Saved in `docs/planning/`. Prepend completed plan filenames with `✅_` (e.g. `docs/planning/✅_my_plan.md`).
+- **Implementation Plans & Walkthroughs**: Active plans live in `docs/planning/`. When completed/fully implemented, prefix with `✅_` and move to `docs/planning/archive/` (e.g. `docs/planning/archive/✅_my_plan.md`).
 
 
 ---
