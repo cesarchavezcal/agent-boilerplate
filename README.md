@@ -7,10 +7,12 @@ A lightweight, stack-agnostic GitHub Repository Template pre-configured for AI a
 ## 🌟 Key Features
 
 - **Universal AI Agent Governance**: Standardized multi-agent configuration via [`AGENTS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/AGENTS.md), [`.cursorrules`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.cursorrules), and [`CLAUDE.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CLAUDE.md). Any agent automatically detects uninitialized placeholders and offers onboarding.
+- **Coding Agent Harness Governance (100/100 Benchmark)**: Integrated execution invariants and state tracking (`./init.sh`, `feature_list.json`, `progress.md`, `session-handoff.md`) ensuring strict "one feature at a time" scope boundaries, fail-fast verification, and zero multi-session amnesia.
 - **Unified SDD + 7-Step Pipeline**: Seamless bi-directional integration between official **Spec-Driven Development (SDD)** lifecycle commands (`/sdd-explore`, `/sdd-apply`, `/sdd-verify`) and specialized domain design skills (`/product-function`, `/ooux`, `/harness`).
 - **AI Pre-Commit Guardrails ([`.gga`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.gga))**: Integrated Gentleman Guardian Angel evaluates staged git commits with Gemini / Antigravity (`agy`), enforcing clean architecture, strict typing, and test-first discipline before commits land.
+- **Documentation vs. OpenSpec Separation & Planning Archive**: Explicit rule of thumb separating conceptual/design documentation (`docs/`) from formal testable contracts & change lifecycles (`openspec/`), with automatic archiving into `docs/planning/archive/`.
 - **Dynamic Post-Brainstorming Stack Scaffolding**: Keep the template 100% stack-neutral. Tech stacks, test runners, and tooling are dynamically synthesized and provisioned after product discovery ($y = f(x)$).
-- **Comprehensive Skill Registry**: 41 pre-indexed, curated agent skills ([`.atl/skill-registry.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.atl/skill-registry.md)) spanning product discovery, engineering TDD, and autonomous subagent swarms.
+- **Comprehensive Skill Registry**: Curated agent skills ([`.atl/skill-registry.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.atl/skill-registry.md)) spanning product discovery, engineering TDD, and autonomous subagent swarms.
 - **Strict Git Lifecycle & PR Standards**: Enforced branch naming (`{prefix}/CCH/{project-initials}-{ticket-number}-{ticket-summary}`), Conventional Commits, and automated PR labeling.
 - **`/i-have-adhd` Mode by Default**: Action-first, numbered, direct communication style that eliminates conversational fluff and keeps execution momentum high.
 
@@ -53,6 +55,30 @@ This onboarding workflow will:
 
 ---
 
+## 🏗️ Coding Agent Harness & Reliability (100/100)
+
+This repository includes a battle-tested agent harness scored across 5 subsystems:
+
+```text
+┌─────────────────┬───────────────────────────────┬───────────────────────────────────────────┐
+│ Subsystem       │ Artifact / Invariant          │ Operational Purpose                       │
+├─────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
+│ 1. Instructions │ AGENTS.md (Section 7)         │ Startup workflow, scope rules, DOD        │
+│ 2. State        │ feature_list.json, progress.md│ Active feature tracking & test evidence   │
+│ 3. Verification │ init.sh (set -e)              │ Automated test/lint verification barrier  │
+│ 4. Scope        │ "One feature at a time" rule  │ Prevents hallucinated refactors & drift   │
+│ 5. Lifecycle    │ session-handoff.md            │ Clean restart state across agent sessions │
+└─────────────────┴───────────────────────────────┴───────────────────────────────────────────┘
+```
+
+### Auditing Harness Reliability
+To run the automated harness validator:
+```bash
+node .agents/skills/harness-creator/scripts/validate-harness.mjs --target .
+```
+
+---
+
 ## 🔄 Unified SDD & 7-Step Architecture Pipeline
 
 Every feature or bug follows the unified pipeline matrix:
@@ -76,6 +102,15 @@ Every feature or bug follows the unified pipeline matrix:
 ### Execution Routing Policy (`/sdd-apply`)
 - **Single-Ticket / Sequential Tasks**: `/sdd-apply` triggers `/implement`, which delegates to an isolated [`/harness`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/harness/SKILL.md) subagent for strict Red ➔ Green ➔ Refactor TDD.
 - **Parallel Swarm Tasks**: `/sdd-apply --team` dispatches [`/team-cheap`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/team-cheap/SKILL.md), fanning out parallel `/harness` subagents across decoupled modules.
+
+---
+
+## 📁 Documentation & Storage Conventions
+
+- **Rule of Thumb for Document Creation**:
+  - **`docs/`**: If it explains *why* or outlines high-level design, product architecture, user journeys, or implementation plans (e.g. `docs/product-design/`, `docs/planning/`).
+  - **`openspec/`**: If it defines a testable contract, formal specification, change lifecycle, tasks, or executable verification criteria (e.g. `openspec/specs/`, `openspec/changes/`).
+- **Planning Archive Convention**: Active implementation plans live in `docs/planning/`. Fully completed plans are prefixed with `✅_` and moved to `docs/planning/archive/`.
 
 ---
 
@@ -130,6 +165,7 @@ Create Branch ──> Make Changes & Commit ──> Push & Open PR ──> Merge
 | Command | Purpose |
 |---|---|
 | `/init-project` | Run onboarding interview, dynamically bootstrap stack, and populate quad files |
+| `/harness-creator` | Audit and validate harness reliability across 5 subsystems (100/100 score) |
 | `/sdd-init` | Initialize or reload OpenSpec persistence and `.atl/skill-registry.md` |
 | `/sdd-explore` | Deep codebase investigation and architectural mapping without modifying code |
 | `/product-function` | Scope feature as $y = f(x)$ with 10x Scope-Stripping |
