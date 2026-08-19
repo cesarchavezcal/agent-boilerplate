@@ -73,6 +73,12 @@
       "skillPath": "skills/harness/SKILL.md",
       "computedHash": "013f1c7dd2d7f6613a0b8da22ea07f47b6fad763e5ddd7161409d30bc18c86a3"
     },
+    "harness-creator": {
+      "source": "walkinglabs/learn-harness-engineering",
+      "sourceType": "github",
+      "skillPath": "skills/harness-creator/SKILL.md",
+      "computedHash": "703331a042d7cbfc0f80409703c998e414b5a1da29fa67602e0d173c45abf573"
+    },
     "i-have-adhd": {
       "source": "cesarchavezcal/personal-skills",
       "sourceType": "github",
@@ -98,7 +104,7 @@
       "computedHash": "98d62164bfb9c245fb2910ac490f30b6f912d645c32d064dbc172b5e542aa33b"
     },
     "init-project": {
-      "source": "cesarchavezcal/agent-boilerplate",
+      "source": "./cesarchavezcal/agent-boilerplate",
       "sourceType": "local",
       "skillPath": ".agents/skills/init-project/SKILL.md",
       "computedHash": "e538bcde5575aba0fd94ef14a9e76d62b47d4dd76c48a97cc6674edd9fe9ef17"

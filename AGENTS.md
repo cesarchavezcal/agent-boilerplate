@@ -142,4 +142,36 @@ These standards are strictly enforced by automated GGA code reviews and agent pa
 2. **Dead Code Elimination**: Remove unused imports, dead branches, and obsolete comments before committing.
 3. **Conventional Commits**: Ensure all changes conform to conventional commit format.
 
+---
 
+## 7. Coding Agent Harness Governance & Invariants
+
+To guarantee reliability across agent sessions, all coding agents must adhere to the following execution invariants:
+
+### Startup Workflow
+Before writing code or editing files in any session:
+1. Run `./init.sh` to verify baseline project health and test status.
+2. Inspect `progress.md` and active `openspec/` change or `feature_list.json` to load current feature state.
+3. Select ONE unfinished feature or task before taking action.
+
+### Scope Boundary
+1. **One feature at a time**: Implement only the single active work unit. Never bundle unassigned tickets or speculative refactors.
+2. **Stay in scope**: Modify only files directly required for the active feature. Do not touch unapproved files or dependencies.
+
+### Definition of Done
+A task or feature is done only when:
+1. All automated tests pass via `./init.sh` with zero failures.
+2. Static typechecks and linters pass cleanly.
+3. Verification evidence (command and output summary) is recorded in `progress.md`.
+4. Automated `.gga` pre-commit audit and `/code-review` checks pass.
+
+### State Routing & Tracking
+1. **Feature Tracker**: Maintain active feature state and dependencies in `feature_list.json` and `openspec/changes/`.
+2. **Progress Log**: Document real-time state, completed tasks, and next steps in `progress.md`.
+3. **Session Handoff**: Maintain restartable state in `session-handoff.md`.
+
+### End of Session
+Before ending any agent session:
+1. Update `progress.md` with completed milestones and current objective.
+2. Record any blockers, modified files, and recommended next steps in `session-handoff.md`.
+3. Ensure the workspace is left in a clean, restartable state.
