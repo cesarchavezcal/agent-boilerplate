@@ -155,6 +155,7 @@ Create Branch ──> Make Changes & Commit ──> Push & Open PR ──> Merge
 
 | Command | Purpose |
 |---|---|
+| `/autonomic` | Master orchestrator: run full product lifecycle autonomously from prompt to PR |
 | `/init-project` | Run onboarding interview, dynamically bootstrap stack, and populate quad files |
 | `/harness-creator` | Audit and validate harness reliability across 5 subsystems (100/100 score) |
 | `/unslop` | Remove AI tells, corporate fluff, and robotic patterns from docs and PRs |
