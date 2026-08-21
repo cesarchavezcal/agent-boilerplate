@@ -1,25 +1,56 @@
 # Agent Boilerplate Template
 
-A lightweight, stack-agnostic GitHub Repository Template pre-configured for AI agent-driven software development across any AI environment (Google Antigravity, Cursor, Claude Code, Windsurf, Aider, GitHub Copilot).
+A lightweight, stack-agnostic GitHub Repository Template pre-configured for autonomous AI agent-driven software development across any AI environment (Google Antigravity, Cursor, Claude Code, Windsurf, Aider, GitHub Copilot).
+
+```text
+┌────────────────────────────────────────────────────────────────┐
+│                          THE HARNESS                           │
+│                                                                │
+│   ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐   │
+│   │ Instructions │  │    State     │  │   Verification     │   │
+│   │              │  │              │  │                    │   │
+│   │ AGENTS.md    │  │ progress.md  │  │ tests + lint       │   │
+│   │ CLAUDE.md    │  │ feature_list │  │ type-check         │   │
+│   │ feature_list │  │ git log      │  │ smoke runs         │   │
+│   │ docs/        │  │ session hand │  │ e2e pipeline       │   │
+│   └──────────────┘  └──────────────┘  └────────────────────┘   │
+│                                                                │
+│   ┌──────────────┐  ┌──────────────────────────────────────┐   │
+│   │    Scope     │  │         Session Lifecycle            │   │
+│   │              │  │                                      │   │
+│   │ one feature  │  │ init.sh at start                     │   │
+│   │ at a time    │  │ clean-state checklist at end         │   │
+│   │ definition   │  │ handoff note for next session        │   │
+│   │ of done      │  │ commit only when safe to resume      │   │
+│   └──────────────┘  └──────────────────────────────────────┘   │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+```
+
+> **The MODEL decides what code to write.**  
+> **The HARNESS governs when, where, and how it writes it.**  
+> **The harness doesn't make the model smarter.**  
+> **It makes the model's output reliable.**
 
 ---
 
 ## 🌟 Key Features
 
 - **Universal AI Agent Governance**: Standardized multi-agent configuration via [`AGENTS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/AGENTS.md), [`.cursorrules`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.cursorrules), and [`CLAUDE.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CLAUDE.md). Any agent automatically detects uninitialized placeholders and offers onboarding.
-- **Coding Agent Harness Governance (100/100 Benchmark)**: Integrated execution invariants and state tracking (`./init.sh`, `feature_list.json`, `progress.md`, `session-handoff.md`) ensuring strict "one feature at a time" scope boundaries, fail-fast verification, and zero multi-session amnesia.
-- **Unified SDD + 7-Step Pipeline**: Seamless bi-directional integration between official **Spec-Driven Development (SDD)** lifecycle commands (`/sdd-explore`, `/sdd-apply`, `/sdd-verify`) and specialized domain design skills (`/product-function`, `/ooux`, `/harness`).
+- **Coding Agent Harness Governance (100/100 Benchmark)**: Integrated 5-subsystem execution invariants and state tracking (`./init.sh`, `feature_list.json`, `progress.md`, `session-handoff.md`) ensuring strict "one feature at a time" scope boundaries, fail-fast verification, and zero multi-session amnesia.
+- **Autonomous Product Builder Engine**: Turns product ideas into shipped features via discovery (`/product-function`), formal specs (`/to-spec`), design (`/ia`, `/ooux`), atomic tickets (`/to-tickets`), and autonomous TDD execution (`/harness`).
+- **Two `/unslop` Quality Gates**: Integrated writing filters at the Spec/Design gate and PR/Walkthrough gate to eliminate AI clichés, corporate filler, and robotic tells.
 - **AI Pre-Commit Guardrails ([`.gga`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.gga))**: Integrated Gentleman Guardian Angel evaluates staged git commits with Gemini / Antigravity (`agy`), enforcing clean architecture, strict typing, and test-first discipline before commits land.
 - **Documentation vs. OpenSpec Separation & Planning Archive**: Explicit rule of thumb separating conceptual/design documentation (`docs/`) from formal testable contracts & change lifecycles (`openspec/`), with automatic archiving into `docs/planning/archive/`.
 - **Dynamic Post-Brainstorming Stack Scaffolding**: Keep the template 100% stack-neutral. Tech stacks, test runners, and tooling are dynamically synthesized and provisioned after product discovery ($y = f(x)$).
-- **Comprehensive Skill Registry**: Curated agent skills ([`.atl/skill-registry.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.atl/skill-registry.md)) spanning product discovery, engineering TDD, and autonomous subagent swarms.
 - **Strict Git Lifecycle & PR Standards**: Enforced branch naming (`{prefix}/CCH/{project-initials}-{ticket-number}-{ticket-summary}`), Conventional Commits, and automated PR labeling.
 - **`/i-have-adhd` Mode by Default**: Action-first, numbered, direct communication style that eliminates conversational fluff and keeps execution momentum high.
 
 ---
 
-## 🚀 One-Prompt Creation with Any AI Agent
+## 🚀 One-Prompt Creation & Autonomous Building
 
+### 1. Initialize a New Repository
 To start a new project from this template, prompt your AI agent:
 
 > *"Create a new project named `my-awesome-app` using `cesarchavezcal/agent-boilerplate` and complete the setup."*
@@ -29,29 +60,10 @@ The AI agent will automatically:
 2. `cd my-awesome-app`
 3. Execute `/init-project` to interview your product concept, dynamically provision your tech stack, populate context files, and open the initial setup PR.
 
----
+### 2. Autonomous Product Feature Building
+To build a feature completely autonomously through the harness, prompt:
 
-## 🛠️ Manual Usage Guide
-
-### 1. Create Repository from Template
-```bash
-gh repo create my-new-app --template cesarchavezcal/agent-boilerplate --public --clone
-cd my-new-app
-```
-
-### 2. Run Automated Setup (`/init-project`)
-Start an agent session in your new workspace and execute:
-
-```text
-/init-project
-```
-
-This onboarding workflow will:
-1. Brainstorm domain requirements and scope the product ($y = f(x)$).
-2. Dynamically recommend and bootstrap the optimal tech stack & test runner (e.g. Next.js, FastAPI, Go, CLI).
-3. Populate [`CONTEXT.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CONTEXT.md), [`AGENTS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/AGENTS.md), [`MEMORY.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/MEMORY.md), [`README.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/README.md), and [`openspec/config.yaml`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/openspec/config.yaml).
-4. Discover stack-specific skills via `npx skills find` with interactive selection.
-5. Create a setup branch (`chore/CCH/initial-setup-project-context`) and open PR.
+> *"Build feature X autonomously: Scope with `/product-function`, spec with `/to-spec`, unslop with `/unslop`, decompose with `/to-tickets`, and implement via `/harness` until `./init.sh` is green."*
 
 ---
 
@@ -79,7 +91,7 @@ node .agents/skills/harness-creator/scripts/validate-harness.mjs --target .
 
 ---
 
-## 🔄 Unified SDD & 7-Step Architecture Pipeline
+## 🔄 Unified SDD & 7-Step Architecture Pipeline with `/unslop`
 
 Every feature or bug follows the unified pipeline matrix:
 
@@ -89,13 +101,13 @@ Every feature or bug follows the unified pipeline matrix:
 ├───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
 │ 1. /sdd-explore, /sdd-propose │ /product-function, /grill     │ docs/product-design/product_function.md   │
 │                               │                               │ openspec/changes/<change>/proposal.md     │
-│ 2. /sdd-spec                  │ /to-spec                      │ openspec/specs/<feature>/spec.md          │
-│ 3. /sdd-design                │ /ia, /ooux, /codebase-design  │ docs/product-design/ia.md, ooux.md        │
-│                               │                               │ openspec/changes/<change>/design.md       │
-│ 4. /sdd-tasks                 │ /to-tickets                   │ openspec/changes/<change>/tasks.md        │
-│ 5. /sdd-apply                 │ /implement, /harness, /team   │ Working source code + unit/integration    │
-│ 6. /sdd-verify                │ /code-review, .gga review     │ Review receipts + pre-commit audit        │
-│ 7. /sdd-archive               │ PR merge + /sdd-archive       │ openspec/changes/archive/<date>-<change>/ │
+│ 2. /sdd-spec, /sdd-design     │ /to-spec, /ia, /ooux          │ openspec/specs/<feature>/spec.md          │
+│                               │ 🟢 GATE 1: /unslop Specs      │ docs/product-design/ia.md, ooux.md        │
+│ 3. /sdd-tasks                 │ /to-tickets                   │ openspec/changes/<change>/tasks.md        │
+│ 4. /sdd-apply                 │ /implement, /harness, /team   │ Working source code + unit/integration    │
+│ 5. /sdd-verify                │ /code-review, .gga review     │ Review receipts + pre-commit audit        │
+│                               │ 🟢 GATE 2: /unslop PR & Walk  │ GitHub Pull Request + walkthrough.md      │
+│ 6. /sdd-archive               │ PR merge + /sdd-archive       │ openspec/changes/archive/<date>-<change>/ │
 └───────────────────────────────┴───────────────────────────────┴───────────────────────────────────────────┘
 ```
 
@@ -124,27 +136,6 @@ This repository includes [`.gga`](file:///Users/cesaradalbertochavezcalderon/Per
 
 ---
 
-## 🔄 Maintenance: Updating Skills & GGA
-
-### Updating Agent Skills
-When new skills or updates are released:
-```bash
-# 1. Update skills from ecosystem
-npx skills add mattpocock/skills -y
-npx skills add cesarchavezcal/personal-skills -y
-
-# 2. Resync skill registry & lockfile in chat
-/sdd-init reload the skills
-```
-
-### Updating GGA
-```bash
-brew update && brew upgrade gga
-gga install
-```
-
----
-
 ## 📋 Git Conventions & PR Workflow
 
 All work follows the mandatory 4-step sequence:
@@ -156,7 +147,7 @@ Create Branch ──> Make Changes & Commit ──> Push & Open PR ──> Merge
   - Initial Setup: `chore/CCH/initial-setup-{summary}`
   - Features / Bugs: `{prefix}/CCH/{project-initials}-{ticket-number}-{ticket-summary}` (`feature`, `bugfix`, `chore`).
 - **Commit Format**: Conventional Commits `<prefix>(<scope>): <summary>`.
-- **PR Principles**: High-level 2–4 sentence summary of WHAT was delivered. Automated labels attached via `gh pr create --label "<label>"`.
+- **PR Principles**: High-level 2–4 sentence summary of WHAT was delivered, un-slopped and clear. Automated labels attached via `gh pr create --label "<label>"`.
 
 ---
 
@@ -166,6 +157,7 @@ Create Branch ──> Make Changes & Commit ──> Push & Open PR ──> Merge
 |---|---|
 | `/init-project` | Run onboarding interview, dynamically bootstrap stack, and populate quad files |
 | `/harness-creator` | Audit and validate harness reliability across 5 subsystems (100/100 score) |
+| `/unslop` | Remove AI tells, corporate fluff, and robotic patterns from docs and PRs |
 | `/sdd-init` | Initialize or reload OpenSpec persistence and `.atl/skill-registry.md` |
 | `/sdd-explore` | Deep codebase investigation and architectural mapping without modifying code |
 | `/product-function` | Scope feature as $y = f(x)$ with 10x Scope-Stripping |

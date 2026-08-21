@@ -24,9 +24,9 @@ This repository operates under **ADHD communication guidelines by default**:
 
 ---
 
-## 2. Unified SDD & 7-Step Architecture Pipeline
+## 2. Unified SDD & 7-Step Architecture Pipeline with `/unslop`
 
-This repository unifies the specialized 7-step design skills with the official **Spec-Driven Development (SDD)** lifecycle. Canonical SDD phase commands and specialized pipeline skills are fully interoperable.
+This repository unifies the specialized 7-step design skills with the official **Spec-Driven Development (SDD)** lifecycle and `/unslop` writing quality gates. Canonical SDD phase commands and specialized pipeline skills are fully interoperable.
 
 ### Unified Pipeline Mapping Matrix
 
@@ -36,13 +36,13 @@ This repository unifies the specialized 7-step design skills with the official *
 ├───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
 │ 1. /sdd-explore, /sdd-propose │ /product-function, /grill     │ docs/product-design/product_function.md   │
 │                               │                               │ openspec/changes/<change>/proposal.md     │
-│ 2. /sdd-spec                  │ /to-spec                      │ openspec/specs/<feature>/spec.md          │
-│ 3. /sdd-design                │ /ia, /ooux, /codebase-design  │ docs/product-design/ia.md, ooux.md        │
-│                               │                               │ openspec/changes/<change>/design.md       │
-│ 4. /sdd-tasks                 │ /to-tickets                   │ openspec/changes/<change>/tasks.md        │
-│ 5. /sdd-apply                 │ /implement, /harness, /team   │ Working source code + unit/integration    │
-│ 6. /sdd-verify                │ /code-review, .gga review     │ Review receipts + pre-commit audit        │
-│ 7. /sdd-archive               │ PR merge + /sdd-archive       │ openspec/changes/archive/<date>-<change>/ │
+│ 2. /sdd-spec, /sdd-design     │ /to-spec, /ia, /ooux          │ openspec/specs/<feature>/spec.md          │
+│                               │ 🟢 GATE 1: /unslop Specs      │ docs/product-design/ia.md, ooux.md        │
+│ 3. /sdd-tasks                 │ /to-tickets                   │ openspec/changes/<change>/tasks.md        │
+│ 4. /sdd-apply                 │ /implement, /harness, /team   │ Working source code + unit/integration    │
+│ 5. /sdd-verify                │ /code-review, .gga review     │ Review receipts + pre-commit audit        │
+│                               │ 🟢 GATE 2: /unslop PR & Walk  │ GitHub Pull Request + walkthrough.md      │
+│ 6. /sdd-archive               │ PR merge + /sdd-archive       │ openspec/changes/archive/<date>-<change>/ │
 └───────────────────────────────┴───────────────────────────────┴───────────────────────────────────────────┘
 ```
 
@@ -54,6 +54,7 @@ When executing implementation tasks:
 ### Quality & Verification Gate for `/sdd-verify` / `/code-review`
 1. **Two-Axis Audit (`/code-review`)**: Runs parallel subagents verifying (1) Spec Compliance and (2) Standards Compliance.
 2. **AI Pre-Commit Guardrail ([`.gga`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.gga))**: Blocks non-compliant commits against Section 6 coding rules using the configured provider in `.gga`.
+3. **Unslop Gate**: Applies `/unslop` to PR descriptions, eliminating AI tells and corporate filler.
 
 ---
 
@@ -145,6 +146,36 @@ These standards are strictly enforced by automated GGA code reviews and agent pa
 ---
 
 ## 7. Coding Agent Harness Governance & Invariants
+
+```text
+┌────────────────────────────────────────────────────────────────┐
+│                          THE HARNESS                           │
+│                                                                │
+│   ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐   │
+│   │ Instructions │  │    State     │  │   Verification     │   │
+│   │              │  │              │  │                    │   │
+│   │ AGENTS.md    │  │ progress.md  │  │ tests + lint       │   │
+│   │ CLAUDE.md    │  │ feature_list │  │ type-check         │   │
+│   │ feature_list │  │ git log      │  │ smoke runs         │   │
+│   │ docs/        │  │ session hand │  │ e2e pipeline       │   │
+│   └──────────────┘  └──────────────┘  └────────────────────┘   │
+│                                                                │
+│   ┌──────────────┐  ┌──────────────────────────────────────┐   │
+│   │    Scope     │  │         Session Lifecycle            │   │
+│   │              │  │                                      │   │
+│   │ one feature  │  │ init.sh at start                     │   │
+│   │ at a time    │  │ clean-state checklist at end         │   │
+│   │ definition   │  │ handoff note for next session        │   │
+│   │ of done      │  │ commit only when safe to resume      │   │
+│   └──────────────┘  └──────────────────────────────────────┘   │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+```
+
+> **The MODEL decides what code to write.**  
+> **The HARNESS governs when, where, and how it writes it.**  
+> **The harness doesn't make the model smarter.**  
+> **It makes the model's output reliable.**
 
 To guarantee reliability across agent sessions, all coding agents must adhere to the following execution invariants:
 
