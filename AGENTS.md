@@ -26,7 +26,10 @@ This repository operates under **ADHD communication guidelines by default**:
 
 ## 2. Unified SDD & 7-Step Architecture Pipeline with `/unslop`
 
-This repository unifies the specialized 7-step design skills with the official **Spec-Driven Development (SDD)** lifecycle and `/unslop` writing quality gates. Canonical SDD phase commands and specialized pipeline skills are fully interoperable.
+This repository unifies the specialized 7-step design skills with the official **Spec-Driven Development (SDD)** lifecycle, the **`/autonomic`** master orchestrator, and `/unslop` writing quality gates. Canonical SDD phase commands, specialized pipeline skills, and autonomous workflows are fully interoperable.
+
+### Master Autonomous Trigger (`/autonomic`)
+Prompting **`"autonomic, build an app that does X, Y, Z"`** or invoking **`/autonomic`** executes the entire 7-step pipeline autonomously from scoping through specifications to `/harness` TDD or `/team-cheap` swarms and verified Pull Request.
 
 ### Unified Pipeline Mapping Matrix
 
@@ -34,6 +37,7 @@ This repository unifies the specialized 7-step design skills with the official *
 ┌───────────────────────────────┬───────────────────────────────┬───────────────────────────────────────────┐
 │ SDD Canonical Phase           │ Specialized Skill Triggers    │ Artifact Target Paths                     │
 ├───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
+│ 0. Master Orchestrator        │ /autonomic                    │ Full End-to-End Autonomous Pipeline       │
 │ 1. /sdd-explore, /sdd-propose │ /product-function, /grill     │ docs/product-design/product_function.md   │
 │                               │                               │ openspec/changes/<change>/proposal.md     │
 │ 2. /sdd-spec, /sdd-design     │ /to-spec, /ia, /ooux          │ openspec/specs/<feature>/spec.md          │
