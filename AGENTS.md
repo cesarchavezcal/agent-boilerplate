@@ -4,11 +4,17 @@ This file defines the primary operational rules, pipeline lifecycle, and communi
 
 ---
 
-## 0. Session-Start Onboarding Auto-Trigger
+## 0. Session-Start Onboarding & Dynamic Skill Discovery
 
 Whenever an agent session starts:
 1. **Inspect Context**: Check [`CONTEXT.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CONTEXT.md) for placeholder strings (`[Your Project Name]`).
 2. **Auto-Prompt**: If placeholders are present, inform the user that the repository is uninitialized and offer to execute the **`/init-project`** onboarding workflow.
+3. **Pure Dynamic 4-Category Skill Discovery**: The template contains zero predefined stack skills. During setup or on-demand via **`/find-skills`**, the agent dynamically queries `npx skills find` across 4 pillars:
+   - 🎨 **Design & UX**: UI components, design tokens, styling (`Step 2 & 5`)
+   - 💻 **Coding & Architecture**: Framework best practices, ORM, schemas (`Step 3 & 5`)
+   - 🧪 **Testing & Quality**: TDD, assertions, E2E runners (`Step 5 & 6`)
+   - 🛠️ **Helpers & Infra**: Deployments, Docker, git hooks, CI/CD (`Step 6 & 7`)
+   Installed skills are mapped into `.atl/skill-registry.md` and `openspec/config.yaml`.
 
 ---
 
@@ -26,10 +32,10 @@ This repository operates under **ADHD communication guidelines by default**:
 
 ## 2. Unified SDD & 7-Step Architecture Pipeline with `/unslop`
 
-This repository unifies the specialized 7-step design skills with the official **Spec-Driven Development (SDD)** lifecycle, the **`/autonomic`** master orchestrator, and `/unslop` writing quality gates. Canonical SDD phase commands, specialized pipeline skills, and autonomous workflows are fully interoperable.
+This repository unifies the specialized 7-step design skills with the official **Spec-Driven Development (SDD)** lifecycle, the **`/autonomic`** master orchestrator, dynamic 4-pillar skill discovery, and `/unslop` writing quality gates. Canonical SDD phase commands, specialized pipeline skills, and autonomous workflows are fully interoperable.
 
 ### Master Autonomous Trigger (`/autonomic`)
-Prompting **`"autonomic, build an app that does X, Y, Z"`** or invoking **`/autonomic`** executes the entire 7-step pipeline autonomously from scoping through specifications to `/harness` TDD or `/team-cheap` swarms and verified Pull Request.
+Prompting **`"autonomic, build an app that does X, Y, Z"`** or invoking **`/autonomic`** executes the entire 7-step pipeline autonomously from scoping and dynamic skill discovery through specifications to `/harness` TDD or `/team-cheap` swarms and verified Pull Request.
 
 ### Unified Pipeline Mapping Matrix
 
@@ -37,7 +43,7 @@ Prompting **`"autonomic, build an app that does X, Y, Z"`** or invoking **`/auto
 ┌───────────────────────────────┬───────────────────────────────┬───────────────────────────────────────────┐
 │ SDD Canonical Phase           │ Specialized Skill Triggers    │ Artifact Target Paths                     │
 ├───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
-│ 0. Master Orchestrator        │ /autonomic                    │ Full End-to-End Autonomous Pipeline       │
+│ 0. Master Orchestrator        │ /autonomic, /find-skills      │ Full End-to-End Autonomous Pipeline       │
 │ 1. /sdd-explore, /sdd-propose │ /product-function, /grill     │ docs/product-design/product_function.md   │
 │                               │                               │ openspec/changes/<change>/proposal.md     │
 │ 2. /sdd-spec, /sdd-design     │ /to-spec, /ia, /ooux          │ openspec/specs/<feature>/spec.md          │
