@@ -100,15 +100,19 @@ Every feature or bug follows the unified pipeline matrix:
 ┌───────────────────────────────┬───────────────────────────────┬───────────────────────────────────────────┐
 │ SDD Canonical Phase           │ Specialized Skill Triggers    │ Artifact Target Paths                     │
 ├───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
+│ 0. Master Orchestrator        │ /autonomic, /find-skills      │ Full End-to-End Autonomous Pipeline       │
 │ 1. /sdd-explore, /sdd-propose │ /product-function, /grill     │ docs/product-design/product_function.md   │
 │                               │                               │ openspec/changes/<change>/proposal.md     │
-│ 2. /sdd-spec, /sdd-design     │ /to-spec, /ia, /ooux          │ openspec/specs/<feature>/spec.md          │
-│                               │ 🟢 GATE 1: /unslop Specs      │ docs/product-design/ia.md, ooux.md        │
-│ 3. /sdd-tasks                 │ /to-tickets                   │ openspec/changes/<change>/tasks.md        │
-│ 4. /sdd-apply                 │ /implement, /harness, /team   │ Working source code + unit/integration    │
-│ 5. /sdd-verify                │ /code-review, .gga review     │ Review receipts + pre-commit audit        │
+│ 2. /sdd-spec                  │ /to-spec                      │ openspec/specs/<feature>/spec.md          │
+│                               │ 🟢 GATE 1: /unslop Specs      │                                           │
+│ 2b. Spec Test Contracts       │ /spec-to-tests                │ openspec/changes/<change>/spec-tests.md   │
+│ 3. /sdd-design                │ /ia, /ooux                    │ docs/product-design/ia.md, ooux.md        │
+│                               │                               │ openspec/changes/<change>/design.md       │
+│ 4. /sdd-tasks                 │ /to-tickets                   │ openspec/changes/<change>/tasks.md        │
+│ 5. /sdd-apply                 │ /implement, /harness, /team   │ Working source code + unit/integration    │
+│ 6. /sdd-verify                │ /code-review, .gga review     │ Review receipts + pre-commit audit        │
 │                               │ 🟢 GATE 2: /unslop PR & Walk  │ GitHub Pull Request + walkthrough.md      │
-│ 6. /sdd-archive               │ PR merge + /sdd-archive       │ openspec/changes/archive/<date>-<change>/ │
+│ 7. /sdd-archive               │ PR merge + /sdd-archive       │ openspec/changes/archive/<date>-<change>/ │
 └───────────────────────────────┴───────────────────────────────┴───────────────────────────────────────────┘
 ```
 
@@ -165,6 +169,7 @@ Create Branch ──> Make Changes & Commit ──> Push & Open PR ──> Merge
 | `/product-function` | Scope feature as $y = f(x)$ with 10x Scope-Stripping |
 | `/grill-with-docs` | Stress-test feature scope and technical bounds against documentation |
 | `/to-spec` / `/sdd-spec` | Generate formal acceptance criteria and domain contracts in `openspec/specs/` |
+| `/spec-to-tests` | Extract un-contaminated behavioral test contracts (`spec-tests.md`) from specs |
 | `/ia` & `/ooux` | Generate Sitemap, User Flows, Object Cards, and ERD in `docs/product-design/` |
 | `/to-tickets` / `/sdd-tasks` | Decompose design into atomic test-first tickets in `tasks.md` |
 | `/sdd-apply` / `/implement` | Execute tasks autonomously via `/harness` (single) or `/team-cheap` (swarm) |
