@@ -38,7 +38,9 @@ A lightweight, stack-agnostic GitHub Repository Template pre-configured for auto
 
 - **Universal AI Agent Governance**: Standardized multi-agent configuration via [`AGENTS.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/AGENTS.md), [`.cursorrules`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.cursorrules), and [`CLAUDE.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CLAUDE.md). Any agent automatically detects uninitialized placeholders and offers onboarding.
 - **Coding Agent Harness Governance (100/100 Benchmark)**: Integrated 5-subsystem execution invariants and state tracking (`./init.sh`, `feature_list.json`, `progress.md`, `session-handoff.md`) ensuring strict "one feature at a time" scope boundaries, fail-fast verification, and zero multi-session amnesia.
-- **Autonomous Product Builder Engine (`/autonomic`)**: Turns product ideas into shipped features via discovery (`/product-function`), formal specs (`/to-spec`), design (`/ia`, `/ooux`), atomic tickets (`/to-tickets`), and autonomous TDD execution (`/harness`).
+- **Master Autonomous Orchestrator (`/autonomic`)**: Chains discovery (`/product-function`), behavioral UX state charts (`/product-description`), formal specs (`/to-spec`), anti-tautological test contracts (`/spec-to-tests`), architecture (`/ia`, `/ooux`), atomic tickets (`/to-tickets`), and autonomous TDD (`/harness`).
+- **Anti-Tautological Spec-to-Tests Seam (`/spec-to-tests`)**: Extracts pure behavioral test contracts (`spec-tests.md`) directly from specifications *before* technical design, eliminating false-green test suites and implementation contamination.
+- **Outside-In Behavioral UX State Charts (`/product-description`)**: Models user experience as an event-by-event state chart across 5 interaction phases, 5-family interrupt checklists, and verification matrices.
 - **Pure Dynamic 4-Pillar Skill Discovery (`/find-skills`)**: Zero predefined skills in the boilerplate. The agent dynamically queries open ecosystem packages across Design, Coding, Testing, and Helpers during setup and coding, linking each skill directly to pipeline phases.
 - **Two `/unslop` Quality Gates**: Integrated writing filters at the Spec/Design gate and PR/Walkthrough gate to eliminate AI clichés, corporate filler, and robotic tells.
 - **AI Pre-Commit Guardrails ([`.gga`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.gga))**: Integrated Gentleman Guardian Angel evaluates staged git commits with Gemini / Antigravity (`agy`), enforcing clean architecture, strict typing, and test-first discipline before commits land.
@@ -62,9 +64,9 @@ The AI agent will automatically:
 3. Execute `/init-project` to interview your product concept, dynamically provision your tech stack, populate context files, and open the initial setup PR.
 
 ### 2. Autonomous Product Feature Building
-To build a feature completely autonomously through the harness, prompt:
+To build a feature completely autonomously through the master pipeline, prompt:
 
-> *"Build feature X autonomously: Scope with `/product-function`, spec with `/to-spec`, unslop with `/unslop`, decompose with `/to-tickets`, and implement via `/harness` until `./init.sh` is green."*
+> *"autonomic, build feature X: Scope with `/product-function`, model UX with `/product-description`, spec with `/to-spec`, lock test contracts with `/spec-to-tests`, decompose with `/to-tickets`, and implement via `/harness` until `./init.sh` is green."*
 
 ---
 
