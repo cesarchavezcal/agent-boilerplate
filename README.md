@@ -102,6 +102,7 @@ Every feature or bug follows the unified pipeline matrix:
 ├───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
 │ 0. Master Orchestrator        │ /autonomic, /find-skills      │ Full End-to-End Autonomous Pipeline       │
 │ 1. /sdd-explore, /sdd-propose │ /product-function, /grill     │ docs/product-design/product_function.md   │
+│                               │ /product-description          │ docs/product-description/                 │
 │                               │                               │ openspec/changes/<change>/proposal.md     │
 │ 2. /sdd-spec                  │ /to-spec                      │ openspec/specs/<feature>/spec.md          │
 │                               │ 🟢 GATE 1: /unslop Specs      │                                           │
@@ -125,7 +126,7 @@ Every feature or bug follows the unified pipeline matrix:
 ## 📁 Documentation & Storage Conventions
 
 - **Rule of Thumb for Document Creation**:
-  - **`docs/`**: If it explains *why* or outlines high-level design, product architecture, user journeys, or implementation plans (e.g. `docs/product-design/`, `docs/planning/`).
+  - **`docs/`**: If it explains *why* or outlines high-level design, product architecture, user journeys, or implementation plans (e.g. `docs/product-design/`, `docs/product-description/`, `docs/planning/`).
   - **`openspec/`**: If it defines a testable contract, formal specification, change lifecycle, tasks, or executable verification criteria (e.g. `openspec/specs/`, `openspec/changes/`).
 - **Planning Archive Convention**: Active implementation plans live in `docs/planning/`. Fully completed plans are prefixed with `✅_` and moved to `docs/planning/archive/`.
 
@@ -167,6 +168,7 @@ Create Branch ──> Make Changes & Commit ──> Push & Open PR ──> Merge
 | `/sdd-init` | Initialize or reload OpenSpec persistence and `.atl/skill-registry.md` |
 | `/sdd-explore` | Deep codebase investigation and architectural mapping without modifying code |
 | `/product-function` | Scope feature as $y = f(x)$ with 10x Scope-Stripping |
+| `/product-description` | Author outside-in UX state charts, 5 interaction phases, and interrupt matrices |
 | `/grill-with-docs` | Stress-test feature scope and technical bounds against documentation |
 | `/to-spec` / `/sdd-spec` | Generate formal acceptance criteria and domain contracts in `openspec/specs/` |
 | `/spec-to-tests` | Extract un-contaminated behavioral test contracts (`spec-tests.md`) from specs |

@@ -45,6 +45,7 @@ Prompting **`"autonomic, build an app that does X, Y, Z"`** or invoking **`/auto
 ├───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
 │ 0. Master Orchestrator        │ /autonomic, /find-skills      │ Full End-to-End Autonomous Pipeline       │
 │ 1. /sdd-explore, /sdd-propose │ /product-function, /grill     │ docs/product-design/product_function.md   │
+│                               │ /product-description          │ docs/product-description/                 │
 │                               │                               │ openspec/changes/<change>/proposal.md     │
 │ 2. /sdd-spec                  │ /to-spec                      │ openspec/specs/<feature>/spec.md          │
 │                               │ 🟢 GATE 1: /unslop Specs      │                                           │
@@ -83,11 +84,11 @@ Whenever the user invokes `/plan`:
 ## 4. Documentation & Storage Conventions
 
 ### Rule of Thumb for Document Creation
-- **`docs/`**: If it explains *why* or outlines a high-level design, product architecture, user flows, or implementation plan (e.g. `docs/product-design/`, `docs/planning/`).
+- **`docs/`**: If it explains *why* or outlines a high-level design, product architecture, user flows, or implementation plan (e.g. `docs/product-design/`, `docs/product-description/`, `docs/planning/`).
 - **`openspec/`**: If it defines a testable contract, formal specification, change lifecycle, tasks, or executable verification criteria (e.g. `openspec/specs/`, `openspec/changes/`).
 
 ### Directory Structure & Lifecycle
-- **Product Design & Schemas**: Saved in `docs/product-design/` (`product_function.md`, `ia.md`, `ooux.md`).
+- **Product Design & Schemas**: Saved in `docs/product-design/` (`product_function.md`, `ia.md`, `ooux.md`) and `docs/product-description/` (`README.md`, `foundations/`, `verification/`, `bug-triage.md`).
 - **OpenSpec Specifications**: Living baseline specs in `openspec/specs/`, active changes in `openspec/changes/`, and archived records in `openspec/changes/archive/`.
 - **Implementation Plans & Walkthroughs**: Active plans live in `docs/planning/`. When completed/fully implemented, prefix with `✅_` and move to `docs/planning/archive/` (e.g. `docs/planning/archive/✅_my_plan.md`).
 
