@@ -35,30 +35,40 @@ This repository operates under **ADHD communication guidelines by default**:
 
 This repository unifies the specialized 7-step design skills with the official **Spec-Driven Development (SDD)** lifecycle, the **`/autonomic`** master orchestrator, dynamic 4-pillar skill discovery, and `/unslop` writing quality gates. Canonical SDD phase commands, specialized pipeline skills, and autonomous workflows are fully interoperable.
 
-### Master Autonomous Trigger (`/autonomic`)
-Prompting **`"autonomic, build an app that does X, Y, Z"`** or invoking **`/autonomic`** executes the entire 7-step pipeline autonomously from scoping and dynamic skill discovery through specifications to `/harness` TDD or `/team-cheap` swarms and verified Pull Request.
+### Master Autonomous Trigger (`/autonomic`) & 3-Phase Macro Subcommands
+Prompting **`"autonomic, build an app that does X, Y, Z"`** or invoking **`/autonomic`** executes the entire 7-step pipeline autonomously from scoping through specifications to TDD and verified Pull Request.
+
+For modular or phased execution, `/autonomic` provides 3 macro subcommands:
+1. **`/autonomic plan [idea]`** (Steps 1 to 6): Scoping ($y = f(x)$), UX state charts, formal specs (`/unslop`), behavioral test contracts (`spec-tests.md`), IA/OOUX, and atomic ticket slicing.
+2. **`/autonomic work [ticket]`** (Step 7): Executes **Ticket Preflight Check** (verifying explicit `SCEN-XXX` contract binding before code starts) followed by isolated `/harness` Red ➔ Green ➔ Refactor TDD.
+3. **`/autonomic review [branch]`** (Steps 8 & 9): Executes **Two-Axis Review** (Axis 1: Behavioral Verification against `spec-tests.md`, Axis 2: Standards & Code Quality via `.gga`), `./init.sh` green pass, and Gate 2 `/unslop` Pull Request.
 
 ### Unified Pipeline Mapping Matrix
 
 ```text
-┌───────────────────────────────┬───────────────────────────────┬───────────────────────────────────────────┐
-│ SDD Canonical Phase           │ Specialized Skill Triggers    │ Artifact Target Paths                     │
-├───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
-│ 0. Master Orchestrator        │ /autonomic, /find-skills      │ Full End-to-End Autonomous Pipeline       │
-│ 1. /sdd-explore, /sdd-propose │ /product-function, /grill     │ docs/product-design/product_function.md   │
-│                               │ /product-description          │ docs/product-description/                 │
-│                               │                               │ openspec/changes/<change>/proposal.md     │
-│ 2. /sdd-spec                  │ /to-spec                      │ openspec/specs/<feature>/spec.md          │
-│                               │ 🟢 GATE 1: /unslop Specs      │                                           │
-│ 2b. Spec Test Contracts       │ /spec-to-tests                │ openspec/changes/<change>/spec-tests.md   │
-│ 3. /sdd-design                │ /ia, /ooux                    │ docs/product-design/ia.md, ooux.md        │
-│                               │                               │ openspec/changes/<change>/design.md       │
-│ 4. /sdd-tasks                 │ /to-tickets                   │ openspec/changes/<change>/tasks.md        │
-│ 5. /sdd-apply                 │ /implement, /harness, /team   │ Working source code + unit/integration    │
-│ 6. /sdd-verify                │ /code-review, .gga review     │ Review receipts + pre-commit audit        │
-│                               │ 🟢 GATE 2: /unslop PR & Walk  │ GitHub Pull Request + walkthrough.md      │
-│ 7. /sdd-archive               │ PR merge + /sdd-archive       │ openspec/changes/archive/<date>-<change>/ │
-└───────────────────────────────┴───────────────────────────────┴───────────────────────────────────────────┘
+┌───────────────────────┬───────────────────────────────┬───────────────────────────────┬───────────────────────────────────────────┐
+│ Macro Phase           │ SDD Canonical Phase           │ Specialized Skill Triggers    │ Artifact Target Paths                     │
+├───────────────────────┼───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
+│ 0. Full Pipeline      │ Complete Lifecycle            │ /autonomic, /find-skills      │ Full End-to-End Autonomous Pipeline       │
+├───────────────────────┼───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
+│ 1. /autonomic plan    │ 1. /sdd-explore, /sdd-propose │ /product-function, /grill     │ docs/product-design/product_function.md   │
+│                       │                               │ /product-description          │ docs/product-description/                 │
+│                       │                               │                               │ openspec/changes/<change>/proposal.md     │
+│                       │ 2. /sdd-spec                  │ /to-spec                      │ openspec/specs/<feature>/spec.md          │
+│                       │                               │ 🟢 GATE 1: /unslop Specs      │                                           │
+│                       │ 2b. Spec Test Contracts       │ /spec-to-tests                │ openspec/changes/<change>/spec-tests.md   │
+│                       │ 3. /sdd-design                │ /ia, /ooux                    │ docs/product-design/ia.md, ooux.md        │
+│                       │                               │                               │ openspec/changes/<change>/design.md       │
+│                       │ 4. /sdd-tasks                 │ /to-tickets                   │ openspec/changes/<change>/tasks.md        │
+├───────────────────────┼───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
+│ 2. /autonomic work    │ 5. /sdd-apply (TDD Worktree)  │ Ticket Preflight Check        │ Enforce bound SCEN-XXX contract           │
+│                       │                               │ /implement, /harness, /team   │ Working source code + unit/integration    │
+├───────────────────────┼───────────────────────────────┼───────────────────────────────┼───────────────────────────────────────────┤
+│ 3. /autonomic review  │ 6. /sdd-verify (Two-Axis)     │ Axis 1: Spec Contract Audit   │ Verify against spec-tests.md scenarios    │
+│                       │                               │ Axis 2: .gga Standards Audit │ Clean arch, strict types, integer cents   │
+│                       │ 7. /sdd-archive & Shipping    │ 🟢 GATE 2: /unslop PR & Walk  │ GitHub Pull Request + walkthrough.md      │
+│                       │                               │ PR merge + /sdd-archive       │ openspec/changes/archive/<date>-<change>/ │
+└───────────────────────┴───────────────────────────────┴───────────────────────────────┴───────────────────────────────────────────┘
 ```
 
 ### Execution Routing Policy for `/sdd-apply` / `/implement`
