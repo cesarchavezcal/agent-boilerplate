@@ -66,6 +66,7 @@ flowchart TD
 ### Step 5: Information Architecture & Domain Modeling (`/ia` & `/ooux`)
 - Generate navigation hierarchy, user journeys, and sitemaps (`docs/product-design/ia.md`).
 - Extract core entities, object cards, metadata, and ERD (`docs/product-design/ooux.md`).
+- Reference and adapt the design system tokens, typography, and component specs in `docs/product-design/design/DESIGN.md` (and platform companion).
 
 ### Step 6: Atomic Ticket Decomposition (`/to-tickets`)
 - Break down the architecture into discrete, test-first tickets in `openspec/changes/<change>/tasks.md`.
@@ -75,7 +76,7 @@ flowchart TD
 Analyze the workload topology:
 1. **Default Linear / Single-Module Route (`/harness`)**:
    - Spawns an isolated worktree subagent via `Workspace: 'share'`.
-   - Executes Red ➔ Green ➔ Refactor TDD on each task unit in sequence against its assigned Scenario ID.
+   - Executes Red ➔ Green ➔ Refactor TDD on each task unit in sequence against its assigned Scenario ID, styling UI components strictly according to `docs/product-design/design/`.
 2. **Parallel Swarm Route (`/team-cheap`)**:
    - If the tasks span decoupled boundaries (e.g. Frontend UI vs Database Schema vs API Services), dispatch `/team-cheap` to fan out parallel `/harness` subagents (Gemini Flash for bulk, Gemini Pro for hard reviews).
 

@@ -15,6 +15,7 @@ Whenever an agent session starts:
    - 🧪 **Testing & Quality**: TDD, assertions, E2E runners (`Step 5 & 6`)
    - 🛠️ **Helpers & Infra**: Deployments, Docker, git hooks, CI/CD (`Step 6 & 7`)
    Installed skills are mapped into `.atl/skill-registry.md` and `openspec/config.yaml`.
+4. **Design System & Platform Styling Interview**: The onboarding workflow interviews the user to generate/tailor the design system in `docs/product-design/design/` (`DESIGN.md`, platform companion files, and `README.md`) for target platforms (Web, Expo, SwiftUI, Android).
 
 ---
 
@@ -88,7 +89,7 @@ Whenever the user invokes `/plan`:
 - **`openspec/`**: If it defines a testable contract, formal specification, change lifecycle, tasks, or executable verification criteria (e.g. `openspec/specs/`, `openspec/changes/`).
 
 ### Directory Structure & Lifecycle
-- **Product Design & Schemas**: Saved in `docs/product-design/` (`product_function.md`, `ia.md`, `ooux.md`) and `docs/product-description/` (`README.md`, `foundations/`, `verification/`, `bug-triage.md`).
+- **Product Design & Schemas**: Saved in `docs/product-design/` (`product_function.md`, `ia.md`, `ooux.md`), `docs/product-design/design/` (customizable design system: `DESIGN.md`, platform companions, `README.md`), and `docs/product-description/` (`README.md`, `foundations/`, `verification/`, `bug-triage.md`).
 - **OpenSpec Specifications**: Living baseline specs in `openspec/specs/`, active changes in `openspec/changes/`, and archived records in `openspec/changes/archive/`.
 - **Implementation Plans & Walkthroughs**: Active plans live in `docs/planning/`. When completed/fully implemented, prefix with `✅_` and move to `docs/planning/archive/` (e.g. `docs/planning/archive/✅_my_plan.md`).
 
@@ -137,7 +138,7 @@ These standards are strictly enforced by automated GGA code reviews and agent pa
 ### Architectural Principles
 1. **Clean / Modular Architecture**: Separate business logic (domain), orchestrators (application/use cases), and adapters (UI, DB, external APIs).
 2. **Deep Modules & Clear Interfaces**: Keep module interfaces simple and signatures expressive while hiding complex implementation details inside.
-3. **Container-Presentational Separation**: In UI layers, isolate side effects, state fetching, and data subscriptions from pure visual rendering components.
+3. **Container-Presentational Separation**: In UI layers, isolate side effects, state fetching, and data subscriptions from pure visual rendering components. Style components strictly adhering to tokens and rules in `docs/product-design/design/DESIGN.md`.
 
 ### Type Safety & Language Strictness
 1. **Strict Types**: No untyped `any` or loose type overrides. Use exact interfaces and discriminated unions for polymorphic data structures.
