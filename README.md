@@ -41,6 +41,7 @@ A lightweight, stack-agnostic GitHub Repository Template pre-configured for auto
 - **Master Autonomous Orchestrator (`/autonomic`)**: Chains discovery (`/product-function`), behavioral UX state charts (`/product-description`), formal specs (`/to-spec`), anti-tautological test contracts (`/spec-to-tests`), architecture (`/ia`, `/ooux`), atomic tickets (`/to-tickets`), and autonomous TDD (`/harness`).
 - **Anti-Tautological Spec-to-Tests Seam (`/spec-to-tests`)**: Extracts pure behavioral test contracts (`spec-tests.md`) directly from specifications *before* technical design, eliminating false-green test suites and implementation contamination.
 - **Outside-In Behavioral UX State Charts (`/product-description`)**: Models user experience as an event-by-event state chart across 5 interaction phases, 5-family interrupt checklists, and verification matrices.
+- **Customizable Design System Boilerplate (`docs/product-design/design/`)**: Pre-configured framework-neutral design specification (`DESIGN.md`) with platform companions (`DESIGN-expo.md`, `DESIGN-swiftui.md`, `DESIGN-android.md`). Tailored dynamically via user interview during `/init-project`.
 - **Pure Dynamic 4-Pillar Skill Discovery (`/find-skills`)**: Zero predefined skills in the boilerplate. The agent dynamically queries open ecosystem packages across Design, Coding, Testing, and Helpers during setup and coding, linking each skill directly to pipeline phases.
 - **Two `/unslop` Quality Gates**: Integrated writing filters at the Spec/Design gate and PR/Walkthrough gate to eliminate AI clichés, corporate filler, and robotic tells.
 - **AI Pre-Commit Guardrails ([`.gga`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.gga))**: Integrated Gentleman Guardian Angel evaluates staged git commits with Gemini / Antigravity (`agy`), enforcing clean architecture, strict typing, and test-first discipline before commits land.
@@ -128,7 +129,7 @@ Every feature or bug follows the unified pipeline matrix:
 ## 📁 Documentation & Storage Conventions
 
 - **Rule of Thumb for Document Creation**:
-  - **`docs/`**: If it explains *why* or outlines high-level design, product architecture, user journeys, or implementation plans (e.g. `docs/product-design/`, `docs/product-description/`, `docs/planning/`).
+  - **`docs/`**: If it explains *why* or outlines high-level design, product architecture, user journeys, design systems, or implementation plans (e.g. `docs/product-design/`, `docs/product-design/design/`, `docs/product-description/`, `docs/planning/`).
   - **`openspec/`**: If it defines a testable contract, formal specification, change lifecycle, tasks, or executable verification criteria (e.g. `openspec/specs/`, `openspec/changes/`).
 - **Planning Archive Convention**: Active implementation plans live in `docs/planning/`. Fully completed plans are prefixed with `✅_` and moved to `docs/planning/archive/`.
 
