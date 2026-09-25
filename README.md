@@ -182,4 +182,5 @@ Create Branch ──> Make Changes & Commit ──> Push & Open PR ──> Merge
 | `/sdd-verify` / `/code-review` | Two-axis audit (Spec + Standards compliance) and GGA pre-commit verification |
 | `/sdd-archive` | Archive completed change into `openspec/changes/archive/` and sync living specs |
 | `/find-skills` | Search open ecosystem skills via `npx skills find` with interactive selection |
+| `/show-me` | Explain topics visually via call trees, component graphs, Mermaid, and artifacts |
 | `/plan` | Generate implementation plan artifact with mandatory turn boundary pause |
