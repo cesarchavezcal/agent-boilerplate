@@ -41,6 +41,7 @@ downloads/
 eggs/
 .eggs/
 lib/
+!.agents/**/lib/
 lib64/
 parts/
 sdist/
