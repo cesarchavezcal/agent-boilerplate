@@ -4,6 +4,24 @@ This file defines the primary operational rules, pipeline lifecycle, and communi
 
 ---
 
+## ⚡ Core Testing & Verification Directives (MANDATORY)
+
+All agents operating in this repository MUST strictly follow these 3 testing and verification invariants:
+
+1. **Anti-Tautology Invariant (Tests Before Code)**:
+   - **NEVER write unit tests after you write code.**
+   - All tests must originate from specification contracts (`spec-tests.md`) before code is implemented (strict Red ➔ Green ➔ Refactor). Tests written after implementation are tautological, confirm existing code bugs, and will be rejected.
+
+2. **Failure-First Enumeration**:
+   - Before implementing any system, component, or isolated module, **FIRST enumerate all the ways it could fail** (boundary conditions, rate limits, invalid state, network drops, timeouts).
+   - Author failing assertions for these failure modes before writing happy-path code.
+
+3. **Complex Feature E2E Verification & Repeatable Artifacts**:
+   - Complex interactive workflows, stateful user journeys, and integration seams must be verified via End-to-End (E2E) tests.
+   - At the conclusion of E2E verification, the agent **MUST produce a verifiable and repeatable artifact** (Playwright trace, screenshot/video report, or structured JSON summary) recorded in `progress.md` and attached to the PR walkthrough.
+
+---
+
 ## 0. Session-Start Onboarding & Dynamic Skill Discovery
 
 Whenever an agent session starts:
@@ -160,9 +178,11 @@ These standards are strictly enforced by automated GGA code reviews and agent pa
 2. **No Swallowed Exceptions**: Every `catch` block must either handle, enrich, or rethrow the error with meaningful contextual diagnostics.
 
 ### Testing & Verification (TDD First)
-1. **Test-First Discipline**: Write failing unit or integration tests before implementing feature logic (Red -> Green -> Refactor).
-2. **Deterministic Tests**: Mock network and non-deterministic state at clear boundaries; avoid flaky sleep timers or arbitrary timeouts.
-3. **Anti-Tautological Testing**: Derive behavioral tests directly from specification contracts (`/spec-to-tests`) before technical design. Tests must verify business contracts, never mirror internal implementation code.
+1. **Test-First Discipline (Anti-Tautology)**: NEVER write unit tests after you write code. All tests must be derived from specification contracts (`spec-tests.md`) before implementation (Red -> Green -> Refactor).
+2. **Failure-First Enumeration**: Before writing code for any module, FIRST enumerate all failure modes, negative invariants, and boundary conditions as failing test cases, THEN implement resilience.
+3. **Deterministic Tests**: Mock network and non-deterministic state at clear boundaries; avoid flaky sleep timers or arbitrary timeouts.
+4. **Anti-Tautological Testing**: Derive behavioral tests directly from specification contracts (`/spec-to-tests`) before technical design. Tests must verify business contracts, never mirror internal implementation code.
+5. **Complex Feature E2E Verification & Artifacts**: Verify complex interactive workflows via E2E tests, producing a verifiable, repeatable artifact (trace, screenshot, or structured JSON summary) recorded in `progress.md`.
 
 ### Code Hygiene & Style
 1. **Self-Documenting Code**: Choose descriptive domain terminology over cryptic abbreviations.
