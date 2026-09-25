@@ -70,13 +70,15 @@ Interview the human developer to customize the design system boilerplate in `doc
    - Update `docs/product-design/design/README.md` to reference the active project design spec.
 - **Criterion**: `docs/product-design/design/DESIGN.md` reflects the project's brand identity, and the active platform companion exists and matches the stack.
 
-### 5. Populate Project Quad Files
-Replace all placeholder brackets `[...]` in place:
+### 5. Populate Project Quad & Governance Files
+Replace all placeholder brackets `[...]` in place across quad and repository governance files:
 1. `CONTEXT.md`: Write concrete Project Name, Purpose, Tech Stack table, and Architecture layout.
 2. `AGENTS.md`: Add any stack-specific constraints, discovered skill roles, or coding standards.
 3. `MEMORY.md`: Record initial domain decisions under `ADR-001`.
 4. `README.md`: Set project title, description, and quickstart commands.
-- **Criterion**: Grep confirms zero instances of `[Your Project Name]` or `[...]` across root documentation files.
+5. `SECURITY.md`: Replace `[Your Project Name]`, security email `[security@yourdomain.com]`, and repository advisory URL. Ensure supported versions table reflects initial version (`0.1.x` or `1.0.x`).
+6. `.github/dependabot.yml`: Enable and configure the package ecosystem (`npm`, `pip`, `cargo`, `gomod`, `swift`, etc.) corresponding to the project's selected tech stack and manifest directory (uncommenting or injecting the ecosystem block while preserving `github-actions`).
+- **Criterion**: Grep confirms zero instances of `[Your Project Name]` across root documentation files, and `.github/dependabot.yml` includes an active entry for the project's primary package ecosystem.
 
 ### 6. Initialize SDD Registry
 Run `/sdd-init` to scan the new stack, configure `openspec/config.yaml`, and build [`.atl/skill-registry.md`](../../.atl/skill-registry.md).
@@ -87,8 +89,8 @@ Execute standard 4-step Git lifecycle:
 ```bash
 git checkout -b chore/CCH/initial-setup-project-context
 git add .
-git commit -m "chore(setup): initialize project context, stack scaffolding, design system, and skill registry"
+git commit -m "chore(setup): initialize project context, stack scaffolding, design system, security policy, and dependabot"
 git push -u origin chore/CCH/initial-setup-project-context
-gh pr create --title "chore(setup): initialize project context, stack, and design system" --body "Initializes project quad files, provisions dynamic tech stack, customizes design system in docs/product-design/design/, and sets up SDD skill registry." --label "chore"
+gh pr create --title "chore(setup): initialize project context, stack, and design system" --body "Initializes project quad and governance files (including SECURITY.md and dependabot.yml), provisions dynamic tech stack, customizes design system in docs/product-design/design/, and sets up SDD skill registry." --label "chore"
 ```
 - **Criterion**: GitHub PR is open and linked in chat.
