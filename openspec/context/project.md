@@ -23,7 +23,7 @@
 │   └── setup-project.sh    # Dynamic project setup & stack auto-detection helper
 ├── AGENTS.md               # Primary operational instructions & 7-step pipeline sequence
 ├── CLAUDE.md               # Claude Code specific rules & onboarding pointer
-├── CONTEXT.md              # Project domain definition & tech stack quad file
+├── GLOSSARY.md             # Project domain definition, ubiquitous glossary & tech stack
 ├── MEMORY.md               # Durable memory & architectural decision records
 ├── README.md               # Template documentation and usage guide
 ├── SKILLS.md               # Human-facing skill catalog & discovery reference

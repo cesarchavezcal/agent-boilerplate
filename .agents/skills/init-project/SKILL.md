@@ -1,6 +1,6 @@
 ---
 name: init-project
-description: Bootstrap a new repository created from agent-boilerplate. Use when starting a new project, when CONTEXT.md contains uninitialized placeholders ([Your Project Name]), or when asked to initialize/setup the project.
+description: Bootstrap a new repository created from agent-boilerplate. Use when starting a new project, when GLOSSARY.md contains uninitialized placeholders ([Your Project Name]), or when asked to initialize/setup the project.
 ---
 
 # Initialize Project (`/init-project`)
@@ -10,7 +10,7 @@ End-to-end onboarding workflow to turn an uninitialized template clone into an a
 ## Sequence
 
 ### 1. Inspect Placeholder State
-Check [`CONTEXT.md`](../../CONTEXT.md) for placeholder string `[Your Project Name]`.
+Check [`GLOSSARY.md`](../../GLOSSARY.md) for placeholder string `[Your Project Name]`.
 - **Criterion**: If already initialized (no placeholders), stop and report active project context. If placeholders exist, proceed.
 
 ### 2. Domain & Scoping Interview ($y = f(x)$)
@@ -72,7 +72,7 @@ Interview the human developer to customize the design system boilerplate in `doc
 
 ### 5. Populate Project Quad & Governance Files
 Replace all placeholder brackets `[...]` in place across quad and repository governance files:
-1. `CONTEXT.md`: Write concrete Project Name, Purpose, Tech Stack table, and Architecture layout.
+1. `GLOSSARY.md`: Write concrete Project Name, Purpose, Tech Stack table, and Architecture layout.
 2. `AGENTS.md`: Add any stack-specific constraints, discovered skill roles, or coding standards.
 3. `MEMORY.md`: Record initial domain decisions under `ADR-001`.
 4. `README.md`: Set project title, description, and quickstart commands.
