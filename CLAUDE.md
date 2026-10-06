@@ -3,6 +3,6 @@
 All operational rules, pipeline lifecycles, and git conventions for this workspace are defined in `AGENTS.md`.
 
 ## Session Start Rule
-1. Inspect `CONTEXT.md` for placeholder strings (`[Your Project Name]`).
+1. Inspect `GLOSSARY.md` for placeholder strings (`[Your Project Name]`).
 2. If placeholders are present, automatically prompt the user or execute the `/init-project` onboarding workflow.
 3. Read `AGENTS.md` at workspace root for full pipeline rules and git conventions.

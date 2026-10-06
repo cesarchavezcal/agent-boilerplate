@@ -1,4 +1,4 @@
-# Project Context (`CONTEXT.md`)
+# Project Glossary & Context (`GLOSSARY.md`)
 
 This file holds the project's domain definition, architecture overview, and technology stack. Fill out these sections when initializing a new project from this boilerplate template.
 
@@ -30,7 +30,7 @@ This file holds the project's domain definition, architecture overview, and tech
 ├── .github/                # GitHub workflows, issue templates, and PR template
 ├── AGENTS.md               # Primary operational rules, SDD pipeline, & coding standards
 ├── CLAUDE.md               # Claude Code configuration pointer
-├── CONTEXT.md              # Project domain definition & tech stack
+├── GLOSSARY.md             # Project domain definition, ubiquitous glossary & tech stack
 ├── MEMORY.md               # Durable memory & architectural decision records
 ├── SKILLS.md               # High-level skill catalog and dynamic discovery guide
 ├── openspec/               # Spec-Driven Development (specs/, changes/, config.yaml)

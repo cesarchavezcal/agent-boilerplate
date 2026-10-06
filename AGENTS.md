@@ -25,7 +25,7 @@ All agents operating in this repository MUST strictly follow these 3 testing and
 ## 0. Session-Start Onboarding & Dynamic Skill Discovery
 
 Whenever an agent session starts:
-1. **Inspect Context**: Check [`CONTEXT.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/CONTEXT.md) for placeholder strings (`[Your Project Name]`).
+1. **Inspect Context & Glossary**: Check [`GLOSSARY.md`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/GLOSSARY.md) for placeholder strings (`[Your Project Name]`).
 2. **Auto-Prompt**: If placeholders are present, inform the user that the repository is uninitialized and offer to execute the **`/init-project`** onboarding workflow.
 3. **Pure Dynamic 4-Category Skill Discovery**: The template contains zero predefined stack skills. During setup or on-demand via **`/find-skills`**, the agent dynamically queries `npx skills find` across 4 pillars:
    - 🎨 **Design & UX**: UI components, design tokens, styling (`Step 2 & 5`)
