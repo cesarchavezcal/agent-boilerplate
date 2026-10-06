@@ -9,10 +9,10 @@
 
 | Metric | Value |
 |---|---|
-| **Workspace Skills Registered** | 42 |
+| **Workspace Skills Registered** | 44 |
 | **Global / System Skills Available** | 25 |
-| **Total Ecosystem Skills** | 67 |
-| **Workspace Sources** | `mattpocock/skills` (35), `cesarchavezcal/personal-skills` (6), `cesarchavezcal/agent-boilerplate` (1) |
+| **Total Ecosystem Skills** | 69 |
+| **Workspace Sources** | `mattpocock/skills` (37), `cesarchavezcal/personal-skills` (6), `cesarchavezcal/agent-boilerplate` (1) |
 | **Global Sources** | `gentleman-programming` (SDD suite, Gentle AI, Skill tooling) |
 | **Storage Locations** | Workspace: `.agents/skills/` &bull; Global: `~/.agents/skills/` |
 | **Lockfile** | [`skills-lock.json`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/skills-lock.json) |
@@ -37,18 +37,20 @@
 
 ---
 
-## 2. Engineering, TDD & Execution (10 skills)
+## 2. Engineering, TDD & Execution (12 skills)
 
 | Skill | Trigger / Command | Source | Description |
 |---|---|---|---|
 | [`implement`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/implement/SKILL.md) | `/implement` | `mattpocock/skills` | Implement a piece of work based on a spec or set of tickets. |
+| [`implement-spec`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/implement-spec/SKILL.md) | `/implement-spec` | `mattpocock/skills` | Implement the result of /to-spec and /to-tickets in code across parallel task-graph worktrees. |
 | [`tdd`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/tdd/SKILL.md) | `/tdd` | `mattpocock/skills` | Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests. |
 | [`harness`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/harness/SKILL.md) | `/harness` | `cesarchavezcal/personal-skills` | Autonomous code-to-production pipeline — takes an idea or ticket through implementation, CI, review, and finalization with zero to full interaction. |
 | [`team-cheap`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/team-cheap/SKILL.md) | `/team-cheap`, `swarm` | `cesarchavezcal/personal-skills` | Cost-optimized workspace-isolated subagent fan-out above /harness — a thin orchestrator dispatches one isolated, fire-and-collect subagent per repo/mandate (Gemini Flash for the bulk, Gemini Pro reserved for hard mandates and reviews) under standing governance. Each subagent runs /harness for its mandate and returns a result. Triggers on '/team-cheap', 'spin up a team', 'swarm agents on this', 'multi-repo team', 'run a team on'. |
 | [`diagnosing-bugs`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/diagnosing-bugs/SKILL.md) | `/diagnosing-bugs` | `mattpocock/skills` | Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow. |
 | [`code-review`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/code-review/SKILL.md) | `/code-review` | `mattpocock/skills` | Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes — Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to "review since X". |
+| [`pr`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/pr/SKILL.md) | `/pr` | `mattpocock/skills` | Write a standardized visual PR body (call trees, component trees, Mermaid, before/after evidence, blast radius). |
+| [`retro`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/retro/SKILL.md) | `/retro` | `mattpocock/skills` | Conduct a retrospective on a coding session, analyzing agent environment, guardrails, and deterministic checks. |
 | [`improve-codebase-architecture`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/improve-codebase-architecture/SKILL.md) | `/improve-codebase-architecture` | `mattpocock/skills` | Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick. |
-| [`resolving-merge-conflicts`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/resolving-merge-conflicts/SKILL.md) | `/resolving-merge-conflicts` | `mattpocock/skills` | Use when you need to resolve an in-progress git merge/rebase conflict. |
 | [`prototype`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/prototype/SKILL.md) | `/prototype` | `mattpocock/skills` | Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like. |
 | [`research`](file:///Users/cesaradalbertochavezcalderon/Personal/agent-boilerplate/.agents/skills/research/SKILL.md) | `/research` | `mattpocock/skills` | Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent. |
 

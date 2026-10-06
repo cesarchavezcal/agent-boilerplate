@@ -97,6 +97,12 @@
       "skillPath": "skills/engineering/implement/SKILL.md",
       "computedHash": "2139cfedf24791adbc839aaab6019cff158af1e28bfead020ec6e0ce01b3e74d"
     },
+    "implement-spec": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "skillPath": "skills/engineering/implement-spec/SKILL.md",
+      "computedHash": "7a22dd2e60b8fcece478ced9d2533582adf3520d695acd3ab715341535c9e56d"
+    },
     "improve-codebase-architecture": {
       "source": "mattpocock/skills",
       "sourceType": "github",
@@ -133,6 +139,12 @@
       "skillPath": "skills/ooux/SKILL.md",
       "computedHash": "29b6a8acf41ba3562740827a96a130cba9341c6e9bc5709a52ed0c7f754b42f4"
     },
+    "pr": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "skillPath": "skills/engineering/pr/SKILL.md",
+      "computedHash": "ab63f1cf78647389edcd386c9427c5dfca27ed2836930c24773ffee834c19bcd"
+    },
     "product-function": {
       "source": "cesarchavezcal/personal-skills",
       "sourceType": "github",
@@ -151,11 +163,11 @@
       "skillPath": "skills/engineering/research/SKILL.md",
       "computedHash": "bd3e2c6826671d82c86ed0da3dac3370ebcf63b0fe847f91bb444e1fb7dac21b"
     },
-    "resolving-merge-conflicts": {
+    "retro": {
       "source": "mattpocock/skills",
       "sourceType": "github",
-      "skillPath": "skills/engineering/resolving-merge-conflicts/SKILL.md",
-      "computedHash": "28aad6f8b1b7025abc8892fa8890f68fe1533499b28a565f416b159131d22fad"
+      "skillPath": "skills/engineering/retro/SKILL.md",
+      "computedHash": "33fbc28568e3146f20fd908b12998bc0ab30aa4f4c87288199a40793efa94696"
     },
     "scaffold-exercises": {
       "source": "mattpocock/skills",
