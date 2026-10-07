@@ -179,7 +179,10 @@ Create Branch ──> Make Changes & Commit ──> Push & Open PR ──> Merge
 | `/ia` & `/ooux` | Generate Sitemap, User Flows, Object Cards, and ERD in `docs/product-design/` |
 | `/to-tickets` / `/sdd-tasks` | Decompose design into atomic test-first tickets in `tasks.md` |
 | `/sdd-apply` / `/implement` | Execute tasks autonomously via `/harness` (single) or `/team-cheap` (swarm) |
+| `/implement-spec` | Implement whole spec across parallel task-graph worktrees |
 | `/sdd-verify` / `/code-review` | Two-axis audit (Spec + Standards compliance) and GGA pre-commit verification |
+| `/pr` | Generate standardized visual PR body (call trees, Mermaid, blast radius) |
+| `/retro` | Conduct a retrospective on a coding session and agent guardrails |
 | `/sdd-archive` | Archive completed change into `openspec/changes/archive/` and sync living specs |
 | `/find-skills` | Search open ecosystem skills via `npx skills find` with interactive selection |
 | `/show-me` | Explain topics visually via call trees, component graphs, Mermaid, and artifacts |
